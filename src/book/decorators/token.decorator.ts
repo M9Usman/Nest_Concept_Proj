@@ -3,7 +3,7 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 export const Token = createParamDecorator(
   (data: string, excutionContext: ExecutionContext) => {
     const request = excutionContext.switchToHttp().getRequest();
-    // console.log(request.headers);
+    console.log(request);
 
     const auth = request.headers['authorization'] || '';
     // console.log('Authorization : ',auth);
